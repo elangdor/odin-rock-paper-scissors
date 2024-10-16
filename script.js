@@ -4,6 +4,9 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
+/* ---- REMOVE THIS WHEN DOING THE CSS VERSION ---- */
+let debugTexter = document.querySelector(".debuggy");
+
 //We need a random computer choice that's new each round
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()*3)+1;
@@ -89,11 +92,17 @@ function playGame(rounds) {
 // We need to adequately celebrate the winner
 function compareScore() {
     if (playerScore > computerScore) {
-        console.log("THE PLAYER WON THE GAME!!!!!!!!");
+        console.log("THE PLAYER WON THE GAME!");
+        /* ---- REMOVE THIS WHEN DOING THE CSS VERSION ---- */
+        debugTexter.innerHTML = "YOU WON!";
     } else if (playerScore < computerScore) {
-        console.log("The COMPUTER won the game :( :/ :/ :( :(");
+        console.log("The COMPUTER won the game");
+        /* ---- REMOVE THIS WHEN DOING THE CSS VERSION ---- */
+        debugTexter.innerHTML = "YOU LOST! :(";
     } else if (playerScore === computerScore) {
-        console.log("it was a draw :l");
+        console.log("it was a draw");
+        /* ---- REMOVE THIS WHEN DOING THE CSS VERSION ---- */
+        debugTexter.innerHTML = "DRAW";
     } else {
         alert("something went wrong with the final compareScore of the game");
     }
@@ -101,3 +110,6 @@ function compareScore() {
 }
 
 playGame(5);
+
+
+
