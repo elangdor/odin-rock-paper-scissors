@@ -6,6 +6,7 @@ let computerScore = 0;
 
 /* ---- REMOVE THIS WHEN DOING THE CSS VERSION ---- */
 let debugTexter = document.querySelector(".debuggy");
+let debugScore = document.getElementById("score");
 
 //We need a random computer choice that's new each round
 function getComputerChoice() {
@@ -106,7 +107,8 @@ function compareScore() {
     } else {
         alert("something went wrong with the final compareScore of the game");
     }
-
+    /* ---- REMOVE THIS WHEN DOING THE CSS VERSION ---- */
+    debugScore.innerHTML = `Player Score: ${playerScore} Computer Score: ${computerScore} `;
 }
 
 playGame(5);
